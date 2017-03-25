@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
+import { PersonComponent } from './person/person.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,47 @@
+<div class="row">
+
+  <div class="col s12 m6">
+    <div class="row">
+      <div class="col m3">
+        <h4>Raid</h4>
+      </div>
+      <div class="col m3 margin-button-top">
+        <a materialize="tooltip" 
+          data-position="right" 
+          data-tooltip="Sort Raid"
+          class="waves-effect waves-light btn-floating grey darken-3 float-right tooltipped" 
+          (click)="sortRaiders()">
+            <i class="material-icons right">swap_vert</i></a>
+      </div>
+    </div>
+    <div *ngFor="let person of raiders">
+      <app-person [person]="person" 
+        (click)="moveLocationToPerson(person)"></app-person>
+    </div>
+    <div *ngIf="raiders.length > 0" class="col s12 m6">
+      <button class="btn">Start Raid</button>
+      <button class="btn grey darken-3" (click)="resetPeople()">Reset</button>
+    </div>
+  </div>
+
+  <div class="col s12 m6">
+    <div class="row">
+        <div class="col m3">
+          <h4>Guild Roster</h4>
+        </div>
+      <div class="col m3 margin-button-top">
+        <a materialize="tooltip" 
+          data-position="right" 
+          data-tooltip="Sort Roster"
+          class="waves-effect waves-light btn-floating grey darken-3 float-right tooltipped" 
+          (click)="sortPeople()">
+            <i class="material-icons right">swap_vert</i>Sort</a>
+      </div>
+    </div>
+    <div *ngFor="let person of people">
+      <app-person [person]="person" 
+        (click)="moveLocationToRaider(person)"></app-person>
+    </div>
+  </div>
+
+</div>

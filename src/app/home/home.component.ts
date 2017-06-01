@@ -2,18 +2,73 @@ import { Component, OnInit } from '@angular/core';
 
 import { PersonComponent } from '../person/person.component';
 import { Person } from '../person/person';
+import { Character } from '../character/character';
 
 // Placeholders for what will eventually be a database call
 const PEOPLE: Person[] = [
-  {id: 1, name: "Poorchoice", characterClass: "Warlock"},
-  {id: 2, name: "Endressa", characterClass: "Priest"}
-]
+  {
+    id: 1,
+    name: 'Poorchoice',
+    characterClass: 'Warlock',
+    selectedCharacter: {
+      name: 'Poorchoice',
+      characterClass: 'Warlock',
+      lootToken: 'Conqueror',
+      classColor: ''
+    },
+    characters: [
+      {
+        name: 'Poorchoice',
+        characterClass: 'Warlock',
+        lootToken: 'Conqueror',
+        classColor: ''
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Endressa',
+    characterClass: 'Priest',
+    selectedCharacter: {
+      name: 'Endressa',
+      characterClass: 'Priest',
+      lootToken: 'Conqueror',
+      classColor: ''
+    },
+    characters: [
+      {
+        name: 'Endressa',
+        characterClass: 'Priest',
+        lootToken: 'Conqueror',
+        classColor: ''
+      }
+    ]
+  }
+];
 
 const RAIDERS: Person[] = [
-  {id: 3, name: "Bob", characterClass: "Paladin"}
-]
+  {
+    id: 3,
+    name: 'Bob',
+    characterClass: 'Paladin',
+    selectedCharacter: {
+      name: 'Bob',
+      characterClass: 'Paladin',
+      lootToken: 'Conqueror',
+      classColor: ''
+    },
+    characters: [
+      {
+        name: 'Bob',
+        characterClass: 'Paladin',
+        lootToken: 'Conqueror',
+        classColor: ''
+      }
+    ]
+  }
+];
 
-let sortText = "Sort";
+const sortText = 'Sort';
 
 
 @Component({
@@ -33,16 +88,16 @@ export class HomeComponent implements OnInit {
   // Move a person from the Roster array to the Raider array
   moveLocationToRaider(person: Person) {
     if (!this.raiders.includes(person)) {
-      var index = this.people.indexOf(person, 0);
+      const index = this.people.indexOf(person, 0);
       this.people.splice(index, 1);
       this.raiders.push(person);
     }
   }
 
   // Move a raider to the Roster array
-  moveLocationToPerson(person: Person){
-    if (!this.people.includes(person)){
-      var index = this.raiders.indexOf(person, 0);
+  moveLocationToPerson(person: Person) {
+    if (!this.people.includes(person)) {
+      const index = this.raiders.indexOf(person, 0);
       this.raiders.splice(index, 1);
       this.people.push(person);
     }
@@ -50,10 +105,10 @@ export class HomeComponent implements OnInit {
 
   sortPeople() {
     this.people.sort((left, right): number => {
-      if (left.name.charAt(0) > right.name.charAt(0)){
+      if (left.name.charAt(0) > right.name.charAt(0)) {
         return 1;
       }
-      if (left.name.charAt(0) < right.name.charAt(0)){
+      if (left.name.charAt(0) < right.name.charAt(0)) {
         return -1;
       }
       return 0;
@@ -62,10 +117,10 @@ export class HomeComponent implements OnInit {
 
   sortRaiders() {
     this.raiders.sort((left, right): number => {
-      if (left.name.charAt(0) > right.name.charAt(0)){
+      if (left.name.charAt(0) > right.name.charAt(0)) {
         return 1;
       }
-      if (left.name.charAt(0) < right.name.charAt(0)){
+      if (left.name.charAt(0) < right.name.charAt(0)) {
         return -1;
       }
       return 0;
@@ -74,7 +129,7 @@ export class HomeComponent implements OnInit {
 
   // Take all raiders and put them back into the Roster
   resetPeople() {
-    for(let raider of this.raiders){
+    for (const raider of this.raiders) {
       this.people.push(raider);
     }
 
@@ -84,5 +139,4 @@ export class HomeComponent implements OnInit {
     // Null raiders because shit's empty
     this.raiders = [];
   }
-
 }

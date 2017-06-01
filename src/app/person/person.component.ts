@@ -19,23 +19,20 @@ export class PersonComponent implements OnInit {
   }
 
   setCardColor(): string {
-    if(this.person.characterClass === "Warlock"){
-      return this.color = "#6a1b9a";
-    }
-    else if (this.person.characterClass === "Priest"){
-      return this.color = "#fafafa"
-    }
-    else if (this.person.characterClass === "Paladin"){
-      return this.color = "#f06292"
+    if (this.person.characterClass === 'Warlock') {
+      return this.color = '#6a1b9a';
+    } else if (this.person.characterClass === 'Priest') {
+      return this.color = '#fafafa';
+    } else if (this.person.characterClass === 'Paladin') {
+      return this.color = '#f06292';
     }
   }
 
   setCardTextColor(): string {
-    if (this.person.characterClass === "Priest"){
-      return this.textColor = "#000000";
-    }
-    else{
-      return this.textColor = "#FFFFFF";
+    if (this.person.characterClass === 'Priest') {
+      return this.textColor = '#000000';
+    } else {
+      return this.textColor = '#FFFFFF';
     }
   }
 }

@@ -10,7 +10,7 @@ import { HomeComponent } from '../home/home.component';
 const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: '**', component: PageNotFoundComponent }
-]
+];
 
 @NgModule({
   imports: [

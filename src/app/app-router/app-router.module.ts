@@ -6,6 +6,7 @@ import { AppComponent } from '../app.component';
 import { PersonComponent } from '../person/person.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { HomeComponent } from '../home/home.component';
+import { NewCharacterComponent } from '../new-character/new-character.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent },

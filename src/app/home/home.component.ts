@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+
+import { MaterializeAction } from 'angular2-materialize';
 
 import { PersonComponent } from '../person/person.component';
 import { Person } from '../person/person';
@@ -80,6 +82,8 @@ export class HomeComponent implements OnInit {
   people = PEOPLE;
   raiders = RAIDERS;
 
+  modalActions = new EventEmitter<string|MaterializeAction>();
+
   constructor() { }
 
   ngOnInit() {
@@ -138,5 +142,13 @@ export class HomeComponent implements OnInit {
 
     // Null raiders because shit's empty
     this.raiders = [];
+  }
+
+  openModal() {
+    this.modalActions.emit({action: 'modal', params: ['open']});
+  }
+
+  closeModal() {
+    this.modalActions.emit({action: 'modal', params: ['close']});
   }
 }

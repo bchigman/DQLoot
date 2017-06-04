@@ -19,12 +19,20 @@ export class PersonComponent implements OnInit {
   }
 
   setCardColor(): string {
-    if (this.person.characterClass === 'Warlock') {
-      return this.color = '#6a1b9a';
-    } else if (this.person.characterClass === 'Priest') {
-      return this.color = '#fafafa';
-    } else if (this.person.characterClass === 'Paladin') {
-      return this.color = '#f06292';
+    switch (this.person.characterClass) {
+      case 'Death Knight': return this.color = '#C41F3B';
+      case 'Demon Hunter': return this.color = '#A330C9';
+      case 'Druid': return this.color = '#FF7D0A';
+      case 'Hunter': return this.color = '#ABD473';
+      case 'Mage': return this.color = '#69CCF0';
+      case 'Monk': return this.color = '#00FF96';
+      case 'Paladin': return this.color = '#F58CBA';
+      case 'Priest': return this.color = '#FFFFFF';
+      case 'Rogue': return this.color = '#FFF569';
+      case 'Shaman': return this.color = '#0070DE';
+      case 'Warlock': return this.color = '#9482C9';
+      case 'Warrior': return this.color = '#C79C6E';
+      default: return this.color = '';
     }
   }
 

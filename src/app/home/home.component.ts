@@ -4,47 +4,18 @@ import { MaterializeAction } from 'angular2-materialize';
 
 import { PersonComponent } from '../person/person.component';
 import { Person } from '../person/person';
-import { Character } from '../character/character';
 
 // Placeholders for what will eventually be a database call
 const PEOPLE: Person[] = [
   {
     id: 1,
     name: 'Poorchoice',
-    characterClass: 'Warlock',
-    selectedCharacter: {
-      name: 'Poorchoice',
-      characterClass: 'Warlock',
-      lootToken: 'Conqueror',
-      classColor: ''
-    },
-    characters: [
-      {
-        name: 'Poorchoice',
-        characterClass: 'Warlock',
-        lootToken: 'Conqueror',
-        classColor: ''
-      }
-    ]
+    characterClass: 'Warlock'
   },
   {
     id: 2,
     name: 'Endressa',
     characterClass: 'Priest',
-    selectedCharacter: {
-      name: 'Endressa',
-      characterClass: 'Priest',
-      lootToken: 'Conqueror',
-      classColor: ''
-    },
-    characters: [
-      {
-        name: 'Endressa',
-        characterClass: 'Priest',
-        lootToken: 'Conqueror',
-        classColor: ''
-      }
-    ]
   }
 ];
 
@@ -53,20 +24,6 @@ const RAIDERS: Person[] = [
     id: 3,
     name: 'Bob',
     characterClass: 'Paladin',
-    selectedCharacter: {
-      name: 'Bob',
-      characterClass: 'Paladin',
-      lootToken: 'Conqueror',
-      classColor: ''
-    },
-    characters: [
-      {
-        name: 'Bob',
-        characterClass: 'Paladin',
-        lootToken: 'Conqueror',
-        classColor: ''
-      }
-    ]
   }
 ];
 

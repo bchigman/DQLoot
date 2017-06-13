@@ -37,7 +37,9 @@ export class PersonComponent implements OnInit {
   }
 
   setCardTextColor(): string {
-    if (this.person.characterClass === 'Priest') {
+    if (this.person.characterClass === 'Priest'
+        || this.person.characterClass === 'Rogue'
+        || this.person.characterClass === 'Monk') {
       return this.textColor = '#000000';
     } else {
       return this.textColor = '#FFFFFF';

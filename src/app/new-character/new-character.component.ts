@@ -13,4 +13,11 @@ export class NewCharacterComponent implements OnInit {
   ngOnInit() {
   }
 
+  setColor(event) {
+    const target = event.target || event.srcElement || event.currentTarget;
+    const className = target.innerHTML.toLowerCase().replace(' ', '');
+
+    target.attributes.class.value += (' ' + className + '-color');
+  }
+
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { ClassButtonComponent } from '../class-button/class-button.component';
 
 
 @Component({
@@ -6,18 +8,29 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './new-character.component.html',
   styleUrls: ['./new-character.component.css']
 })
-export class NewCharacterComponent implements OnInit {
+export class NewCharacterComponent {
+  characterName: string;
+  characterClass: string = "Choose a class";
+
+  classNames = [
+    'Death Knight',
+    'Demon Hunter',
+    'Druid',
+    'Hunter',
+    'Mage',
+    'Monk',
+    'Paladin',
+    'Priest',
+    'Rogue',
+    'Shaman',
+    'Warlock',
+    'Warrior'
+  ];
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  setColor(event) {
-    const target = event.target || event.srcElement || event.currentTarget;
-    const className = target.innerHTML.toLowerCase().replace(' ', '');
-
-    target.attributes.class.value += (' ' + className + '-color');
+  setText(text: string) {
+    this.characterClass = text;
   }
 
 }

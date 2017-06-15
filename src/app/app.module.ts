@@ -11,6 +11,7 @@ import { PersonComponent } from './person/person.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { NewCharacterComponent } from './new-character/new-character.component';
+import { ClassButtonComponent } from './class-button/class-button.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NewCharacterComponent } from './new-character/new-character.component';
     PersonComponent,
     PageNotFoundComponent,
     HomeComponent,
-    NewCharacterComponent
+    NewCharacterComponent,
+    ClassButtonComponent
   ],
   imports: [
     BrowserModule,

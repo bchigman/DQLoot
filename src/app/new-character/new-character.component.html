@@ -9,50 +9,23 @@
         </label>
         <input id="character-name"
           class="validate"
-          placholder="Character Name"
           type="text" />
       </div>
-    </div>
-    <div class="row">
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Death Knight</a>
-      </div>
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Demon Hunter</a>
-      </div>
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Druid</a>
-      </div>
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Hunter</a>
+      <div class="col s12 m6 input-field">
+        <label for="character-class">
+          Character Class
+        </label>
+        <input id="character-class"
+          class="validate"
+          type="text"
+          [value]="characterClass" 
+          readonly/>
       </div>
     </div>
     <div class="row">
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Mage</a>
-      </div>
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Monk</a>
-      </div>
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Paladin</a>
-      </div>
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Priest</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Rogue</a>
-      </div>
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Shaman</a>
-      </div>
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Warlock</a>
-      </div>
-      <div class="col s3">
-        <a class="btn col s12" (click)="setColor($event)">Warrior</a>
+      <div *ngFor="let class of classNames" class="col s3">
+        <app-class-button [className]="class"
+          (click)="setText(class)"></app-class-button>
       </div>
     </div>
   </form>

@@ -24,8 +24,8 @@
     </div>
     <div class="row">
       <div *ngFor="let class of classNames" class="col s3">
-        <app-class-button [className]="class"
-          (click)="setText(class)"></app-class-button>
+        <class-button [className]="class"
+          (click)="setText(class)"></class-button>
       </div>
     </div>
   </form>

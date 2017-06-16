@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-class-button',
+  selector: 'class-button',
   templateUrl: './class-button.component.html',
   styleUrls: ['./class-button.component.css']
 })
@@ -10,6 +10,10 @@ export class ClassButtonComponent {
   color: string = '#26a69a';
   textColor: string ='#FFFFFF';
   isSelected: boolean = false;
+
+  // constructor(name: string) {
+  //   this.className = name;
+  // }
 
   setColor(): string {
     switch (this.className) {
